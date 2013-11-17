@@ -22,7 +22,7 @@ With this plugin you can use in CSS something like this
 
 This will generate random number in the range of 20 and 50.
 
-It's easy, doesn't it? :)
+It's easy, isn't it? :)
 
 ---
 
