@@ -1,7 +1,10 @@
 # Some PrefixFree plugins
 
-List of content:
-	[1. Generating random numbers in CSS (prefixfree.random.js)](#1-generating-random-numbers-in-css)
+List of contents:
+
+[1. Generating random numbers in CSS (prefixfree.random.js)](#1-generating-random-numbers-in-css)
+---
+[Other plugins](#other-plugins)
 
 ---
 
