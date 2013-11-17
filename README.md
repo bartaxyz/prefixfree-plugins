@@ -2,6 +2,7 @@
 ## [Generating random numbers](prefixfree.random.js)
 
 Plugin: prefixfree.random.js
+
 With this plugin you can use in CSS something like this
 
 ```css
@@ -18,7 +19,9 @@ It's easy, doesn't it? :)
 
 ### [Other plugins](http://leaverou.github.io/prefixfree/#plugins)
 
-You can find other plugins on official website. Very useful is plugin that allow you do this
+You can find other plugins on official website.
+
+Very useful plugin is "CSS Variables" that alow you do this:
 
 ```css
 :root {
@@ -27,5 +30,13 @@ You can find other plugins on official website. Very useful is plugin that allow
 
 body {
 	background: var(maincolor);
+}
+```
+
+result will be:
+
+```css
+body {
+	background: #F5F5F5;
 }
 ```
