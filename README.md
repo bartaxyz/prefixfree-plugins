@@ -6,7 +6,7 @@ With this plugin you can use in CSS something like this
 
 ```css
 .some-class {
-	width: random(20, 50)px;
+	width: random(20 - 50)px;
 }
 ```
 

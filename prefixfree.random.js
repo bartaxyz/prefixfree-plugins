@@ -4,7 +4,7 @@
 	}
 
 	StyleFix.register(function(css) {
-		return css.replace(/random\((\d+),\s*?(\d+)\)\s*?(\w+)/gi, function(exp, minNum, maxNum, unit) {
+		return css.replace(/random\((\d+)\s*?-\s*?(\d+)\)\s*?(\w+)/gi, function(exp, minNum, maxNum, unit) {
 			var max = parseInt(maxNum, 10),
 				min = parseInt(minNum, 10);
 			if(max < min) {
