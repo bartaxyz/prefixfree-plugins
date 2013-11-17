@@ -17,9 +17,9 @@ It's easy, doesn't it? :)
 
 ---
 
-### [Other plugins](http://leaverou.github.io/prefixfree/#plugins)
+### Other plugins
 
-You can find other plugins on official website.
+You can find other plugins on [official website](http://leaverou.github.io/prefixfree/#plugins).
 
 Very useful plugin is "CSS Variables" that alow you do this:
 
