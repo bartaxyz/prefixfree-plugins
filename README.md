@@ -1,7 +1,7 @@
 # Some PrefixFree plugins
 ## [Generating random numbers](prefixfree.random.js)
 
-Plugin: prefixfree.random.js
+##### Plugin: prefixfree.random.js
 
 With this plugin you can use in CSS something like this
 
