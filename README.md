@@ -14,6 +14,8 @@ List of contents:
 
 With this plugin you can use in CSS something like this
 
+**Example:**
+
 ```css
 .some-class {
 	width: random(20 - 50)px;
@@ -24,6 +26,24 @@ This will generate random number in the range of 20 and 50.
 
 It's easy, isn't it? :)
 
+##### Plugin: [prefixfree.var.js](http://leaverou.github.io/prefixfree/#plugins), [prefixfree.random.js](prefixfree.random.js)
+
+These two plugins are very useful when you need random number or color for more than one element.
+
+You can use only RGB colors right now. HEX isn't supported (i'm working on that).
+
+**Example:**
+
+```css
+:root {
+	var-main-color: rgb(random(160, 190), random(160, 190), random(160, 190));
+}
+
+.some-class {
+	background: var(main-color);
+}
+```
+
 ---
 
 ### Other plugins
@@ -32,13 +52,15 @@ You can find other plugins on [official website](http://leaverou.github.io/prefi
 
 Very useful plugin is "CSS Variables" that alow you do this:
 
+**Example:**
+
 ```css
 :root {
-	var-maincolor: #F5F5F5;
+	var-main-color: #F5F5F5;
 }
 
 body {
-	background: var(maincolor);
+	background: var(main-color);
 }
 ```
 
