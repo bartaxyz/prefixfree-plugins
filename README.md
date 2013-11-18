@@ -85,4 +85,4 @@ body {
 }
 ```
 
-**Documentation: [Official W3C documentation for CSS variables](http://www.w3.org/TR/css-variables/#defining-variables);
+**Documentation: [Official W3C documentation for CSS variables](http://www.w3.org/TR/css-variables/#defining-variables)**
