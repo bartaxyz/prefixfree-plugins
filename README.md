@@ -19,18 +19,20 @@ You can use only RGB colors right now. HEX is not supported (i'm working on that
 **Example:**
 
 ```css
+// random number from 20 to 50 pixels
 .some-class-1 {
-	width: random(20 - 50)px; // random number from 20 to 50 pixels
+	width: random(20 - 50)px;
 }
 
+// random color from #888 to #999
+// Hexadecimal color isn't supported. You can use only decimal values.
 .some-class-2 {
-	background: #random(888, 999); // random color from #888 to #999
-	// Hexadecimal color isn't supported. You can use only decimal values.
+	background: #random(888, 999);
 }
 
+// random color from rgb(160, 160, 160) to rgb(190, 190, 190)
 .some-class-3 {
 	background: rgb(random(160, 190), random(160, 190), random(160, 190));
-	// random color from rgb(160, 160, 160) to rgb(190, 190, 190)
 }
 ```
 
