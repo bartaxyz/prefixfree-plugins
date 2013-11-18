@@ -12,25 +12,33 @@ List of contents:
 
 ##### Plugin: [prefixfree.random.js](prefixfree.random.js)
 
-With this plugin you can use in CSS something like this
+This plugin generate random number with function `random()` in css
+
+You can use only RGB colors right now. HEX isn't supported (i'm working on that).
 
 **Example:**
 
 ```css
-.some-class {
-	width: random(20 - 50)px;
+.some-class-1 {
+	width: random(20 - 50)px; // random number from 20 to 50 pixels
+}
+
+.some-class-2 {
+	background: #random(888, 999); // random color from #888 to #999
+	// Hexadecimal color isn't supported. You can use only decimal values.
+}
+
+.some-class-3 {
+	background: rgb(random(160, 190), random(160, 190), random(160, 190));
+	// random color from rgb(160, 160, 160) to rgb(190, 190, 190)
 }
 ```
-
-This will generate random number in the range of 20 and 50.
 
 It's easy, isn't it? :)
 
 ##### Plugin: [prefixfree.var.js](http://leaverou.github.io/prefixfree/#plugins), [prefixfree.random.js](prefixfree.random.js)
 
 These two plugins are very useful when you need random number or color for more than one element.
-
-You can use only RGB colors right now. HEX isn't supported (i'm working on that).
 
 **Example:**
 
@@ -42,6 +50,9 @@ You can use only RGB colors right now. HEX isn't supported (i'm working on that)
 .some-class {
 	background: var(main-color);
 }
+
+// var(main-color) will be random color on every website refresh
+
 ```
 
 ---
@@ -50,7 +61,7 @@ You can use only RGB colors right now. HEX isn't supported (i'm working on that)
 
 You can find other plugins on [official website](http://leaverou.github.io/prefixfree/#plugins).
 
-Very useful plugin is "CSS Variables" that alow you do this:
+Very useful plugin is "CSS Variables". This plugin will allow you add variables in your css. It's W3C solution so it is absolutely valid to use. When CSS variables are supported by browser, this plugin will add prefix or let it be as it is.
 
 **Example:**
 
