@@ -63,7 +63,7 @@ These two plugins are very useful when you need random number or color for more 
 
 You can find other plugins on [official website](http://leaverou.github.io/prefixfree/#plugins).
 
-Very useful plugin is "CSS Variables". This plugin will allow you add variables in your css. It's W3C solution so it is absolutely valid to use. When CSS variables are supported by browser, this plugin will add prefix or let it be as it is.
+Very useful plugin is "CSS Variables". This plugin will allow you add variables in your css. It's [W3C solution](http://www.w3.org/TR/css-variables/#defining-variables) so it is absolutely valid to use. When CSS variables are supported by browser, this plugin will add prefix or let it be as it is.
 
 **Example:**
 
@@ -84,3 +84,5 @@ body {
 	background: #F5F5F5;
 }
 ```
+
+**Documentation: [Official W3C documentation for CSS variables](http://www.w3.org/TR/css-variables/#defining-variables);
