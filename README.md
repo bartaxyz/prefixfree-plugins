@@ -14,7 +14,7 @@ List of contents:
 
 This plugin generate random number with function `random()` in css
 
-You can use only RGB colors right now. HEX isn't supported (i'm working on that).
+You can use only RGB colors right now. HEX is not supported (i'm working on that).
 
 **Example:**
 
