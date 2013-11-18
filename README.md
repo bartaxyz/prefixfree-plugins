@@ -25,7 +25,7 @@ You can use only RGB colors right now. HEX is not supported (i'm working on that
 }
 
 // random color from #888 to #999
-// Hexadecimal color isn't supported. You can use only decimal values.
+// Hexadecimal color is not supported. You can use only decimal values.
 .some-class-2 {
 	background: #random(888, 999);
 }
