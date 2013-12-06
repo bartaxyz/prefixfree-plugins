@@ -62,7 +62,7 @@ These two plugins are very useful when you need random number or color for more 
 
 ##### Plugin: [prefixfree.parent.js](prefixfree.parent.js)
 
-With this plugin you can in CSS selectors select parent element. Important is `!`. You can select parent element with code like this: 
+With this plugin you can in CSS selectors select parent element. You can select parent element with code like this: 
 
 ```css
 ul! > li.active {
@@ -78,7 +78,7 @@ If browser support `!` in selectors then it's normal dynamic.
 
 ##### Plugin: [prefixfree.loop.js](prefixfree.loop.js)
 
-With this plugin you can in CSS selectors select parent element. Important is `!`. You can select parent element with code like this: 
+Sometimes you have to do something more than one. Why don't use loop. Your code will be smaller and when you want rewrite something you can do it just once and not many times. :)
 
 ```css
 // loop(variable name, start value, end value)
@@ -88,10 +88,6 @@ loop($i, 1, 3)
 	}
 loopend;
 ```
-
-It's easy to use but it's static. On page load it's hardly write and it's not dynamicaly changing. Sometimes it's useful to have nice and pure css.
-
-If browser support `!` in selectors then it's normal dynamic.
 
 ---
 
