@@ -3,6 +3,7 @@
 List of contents:
 
 [1. Generating random numbers in CSS (prefixfree.random.js)](#1-generating-random-numbers-in-css)
+[2. Get parent element in CSS selectors (prefixfree.parent.js)](#1-get-parent-element-in-css-selectors)
 
 [Other plugins](#other-plugins)
 
@@ -56,6 +57,40 @@ These two plugins are very useful when you need random number or color for more 
 // var(main-color) will be random color on every website refresh
 
 ```
+
+## 2. Get parent element in css selectors
+
+##### Plugin: [prefixfree.parent.js](prefixfree.parent.js)
+
+With this plugin you can in CSS selectors select parent element. Important is `!`. You can select parent element with code like this: 
+
+```css
+ul! > li.active {
+	// styling the <ul> element
+}
+```
+
+It's easy to use but it's static. On page load it's hardly write and it's not dynamicaly changing. Sometimes it's useful to have nice and pure css.
+
+If browser support `!` in selectors then it's normal dynamic.
+
+## 3. Loop in CSS
+
+##### Plugin: [prefixfree.lopp.js](prefixfree.loop.js)
+
+With this plugin you can in CSS selectors select parent element. Important is `!`. You can select parent element with code like this: 
+
+```css
+loop($i, 1, 3) // variable name, start value (include this value), end value (include this value)
+	a:nth-of-type($i) {
+		width: calc(40px * $i);
+	}
+loopend;
+```
+
+It's easy to use but it's static. On page load it's hardly write and it's not dynamicaly changing. Sometimes it's useful to have nice and pure css.
+
+If browser support `!` in selectors then it's normal dynamic.
 
 ---
 
