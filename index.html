@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Prefixfree testing</title>
+	</head>
+
+	<body>
+		<ul>
+			<li>item #1</li>
+			<li>item #2</li>
+			<li class="active">item #3</li>
+			<li>item #4</li>
+		</ul>
+		<ul>
+			<li>item #1</li>
+			<li>item #2</li>
+			<li class="active">item #3</li>
+			<li>item #4</li>
+		</ul>
+		<ul>
+			<li>item #1</li>
+			<li>item #2</li>
+			<li>item #3</li>
+			<li>item #4</li>
+		</ul>
+
+		<style>
+			loop($i, 3, 3)
+				ul:nth-of-type($i) {
+					background: rgba(0, 0, 0, 0.2);
+					border-radius: 5px;
+				}
+			loopend;
+			
+			ul! > li.active {
+				background: tomato;
+				border-radius: 5px;
+			}
+		</style>
+
+		<script src="prefixfree/prefixfree.min.js"></script>
+		<script src="prefixfree/prefixfree.vars.js"></script>
+		<script src="prefixfree.random.js"></script>
+		<script src="prefixfree.for.js"></script>
+		<script src="prefixfree.parent.js"></script>
+	</body>
+</html>
