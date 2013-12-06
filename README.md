@@ -76,12 +76,13 @@ If browser support `!` in selectors then it's normal dynamic.
 
 ## 3. Loop in CSS
 
-##### Plugin: [prefixfree.lopp.js](prefixfree.loop.js)
+##### Plugin: [prefixfree.loop.js](prefixfree.loop.js)
 
 With this plugin you can in CSS selectors select parent element. Important is `!`. You can select parent element with code like this: 
 
 ```css
-loop($i, 1, 3) // variable name, start value (include this value), end value (include this value)
+// loop(variable name, start value, end value)
+loop($i, 1, 3)
 	a:nth-of-type($i) {
 		width: calc(40px * $i);
 	}
