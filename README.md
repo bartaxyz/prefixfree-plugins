@@ -61,7 +61,7 @@ These two plugins are very useful when you need random number or color for more 
 
 ```
 
-## 2. Get parent element in css selectors
+## 2. Get parent element in CSS selectors
 
 ##### Plugin: [prefixfree.parent.js](prefixfree.parent.js)
 
