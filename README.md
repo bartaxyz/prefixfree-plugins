@@ -4,7 +4,9 @@ List of contents:
 
 [1. Generating random numbers in CSS (prefixfree.random.js)](#1-generating-random-numbers-in-css)
 
-[2. Get parent element in CSS selectors (prefixfree.parent.js)](#1-get-parent-element-in-css-selectors)
+[2. Get parent element in CSS selectors (prefixfree.parent.js)](#2-get-parent-element-in-css-selectors)
+
+[3. Loop in CSS (prefixfree.loop.js)](#3-loop-in-css)
 
 [3. Loop in CSS (prefixfree.loop.js)](#3-loop-in-css)
 
