@@ -7,7 +7,7 @@
 
 		css = css.replace(/\/\*(.|[\r\n])*?\*\//g, '');
 
-		window.parseCSS = function(str) {
+		parseCSS = function(str) {
 			if(str.indexOf('keyframes') != -1) {
 				return { outer: str, inner: '', response: false };
 			}
