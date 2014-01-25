@@ -18,7 +18,8 @@
 				tempString = '',
 				outerString = '',
 				innerString = '',
-				character = '';
+				character = '',
+				response = false;
 
 			for(var i = 0; i < str.length; ++i) {
 				character = str[i];
@@ -37,9 +38,15 @@
 						if(brackets == 0) {
 							selector = tempString.replace(/\{/g, '');
 						} else if(brackets == 1) {
-							tempString = tempString.split(',');
-							tempString = selector + tempString.join(',' + selector);
 							nestedSelector = tempString;
+							tempString = selector + tempString;
+							response = true;
+						} else if(brackets > 2) {
+							response = true;
+							if(tempString != nestedSelector) {
+								innerString += tempString;
+							}
+							tempString = '';
 						} else {
 							if(tempString != nestedSelector) {
 								innerString += tempString;
@@ -64,10 +71,9 @@
 			if(innerString != '') {
 				innerString = innerString.replace(/^\s/, ' ');
 			}
-			var response = (innerString.split("{").length - 1 >= 2);
 			
 			return { outer: outerString, inner: innerString, response: response };
-		};
+		}
 
 		var nested = {
 			arr: [],
@@ -79,7 +85,7 @@
 			brackets = 0,
 			write = true;
 
-		for(i = 0; i < css.length; ++i) {
+		for(var i = 0; i < css.length; ++i) {
 			character = css[i];
 			nested.rule += css[i];
 
@@ -107,11 +113,12 @@
 			prom,
 			result;
 
-		for(i = 0; i < nested.arr.length; ++i) {
+		for(var i = 0; i < nested.arr.length; ++i) {
 			rule = nested.arr[i];
 			prom = parseCSS(rule);
 			newCSS += prom.outer;
 			result = prom.response;
+			console.log(result);
 			while(result) {
 				prom = parseCSS(prom.inner);
 				newCSS += prom.outer;
@@ -119,6 +126,7 @@
 			}
 			newCSS += prom.inner;
 		}
+
 		newCSS = newCSS.replace(/\s*&\s*/g, '');
 
 		return newCSS;
