@@ -8,7 +8,7 @@ List of contents:
 
 [3. Loop in CSS (prefixfree.loop.js)](#3-loop-in-css)
 
-[3. Loop in CSS (prefixfree.loop.js)](#3-loop-in-css)
+[4. Nested CSS (prefixfree.nested.js)](#3-loop-in-css)
 
 [Other plugins](#other-plugins)
 
@@ -93,6 +93,53 @@ loop($i, 1, 3)
 	}
 loopend;
 ```
+
+## 4. Nested CSS
+
+##### Plugin: [prefixfree.nested.js](prefixfree.nested.js)
+
+With this plugin you can use nested CSS just like in LESS or SASS.
+
+```css
+header {
+	h1 {
+		font-size: 26px;
+		font-weight: bold;
+	}
+	p {
+		font-size: 12px;
+		a {
+			text-decoration: none;
+			&:hover {
+				border-width: 1px;
+			}
+		}
+	}
+}
+
+/* compiled */
+
+header h1 {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+header p {
+	font-size: 12px;
+}
+
+header p a {
+	text-decoration: none;
+}
+
+header p a:hover {
+	border-width: 1px;
+}
+
+```
+
+In upper code you can see nice nested code and below you can see compiled code. You have to write semicolon after every rule to avoid errors. I really love how you can easily write it in preprocesors way.
+
 
 ---
 
