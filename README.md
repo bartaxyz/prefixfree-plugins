@@ -8,7 +8,7 @@ List of contents:
 
 [3. Loop in CSS (prefixfree.loop.js)](#3-loop-in-css)
 
-[4. Nested CSS (prefixfree.nested.js)](#3-loop-in-css)
+[4. Nested CSS (prefixfree.nested.js)](#4-nested-css)
 
 [Other plugins](#other-plugins)
 
