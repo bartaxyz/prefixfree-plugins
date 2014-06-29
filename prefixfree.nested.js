@@ -6,9 +6,10 @@
 	StyleFix.register(function(css) {
 
 		css = css.replace(/\/\*(.|[\r\n])*?\*\//g, '');
+		css = css.replace(/\{/g, '{;');
 
-		parseCSS = function(str) {
-			if(str.indexOf('keyframes') != -1) {
+		var parseCSS = function(str) {
+			if(str.indexOf('keyframes') != -1 || str.indexOf('media') != -1) {
 				return { outer: str, inner: '', response: false };
 			}
 
@@ -40,6 +41,7 @@
 						} else if(brackets == 1) {
 							nestedSelector = tempString;
 							tempString = selector + tempString;
+							tempString = tempString.replace(/\s+/g, ' ');
 							response = true;
 						} else if(brackets > 2) {
 							response = true;
@@ -71,7 +73,6 @@
 			if(innerString != '') {
 				innerString = innerString.replace(/^\s/, ' ');
 			}
-			
 			return { outer: outerString, inner: innerString, response: response };
 		}
 
@@ -118,7 +119,6 @@
 			prom = parseCSS(rule);
 			newCSS += prom.outer;
 			result = prom.response;
-			console.log(result);
 			while(result) {
 				prom = parseCSS(prom.inner);
 				newCSS += prom.outer;
@@ -128,7 +128,10 @@
 		}
 
 		newCSS = newCSS.replace(/\s*&\s*/g, '');
-
+		newCSS = newCSS.replace(/\n\s+(.*;)/g, function($0, $1) { return '\n    ' + $1 });
+		newCSS = newCSS.replace(/\}\n*/g, '}\n\n');
+		newCSS = newCSS.replace(/\{;+/g, '{');
+		document.body.innerHTML += '<pre>' + newCSS + '</pre>';
 		return newCSS;
 	});
 })();
