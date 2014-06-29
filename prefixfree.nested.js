@@ -131,7 +131,7 @@
 		newCSS = newCSS.replace(/\n\s+(.*;)/g, function($0, $1) { return '\n    ' + $1 });
 		newCSS = newCSS.replace(/\}\n*/g, '}\n\n');
 		newCSS = newCSS.replace(/\{;+/g, '{');
-		document.body.innerHTML += '<pre>' + newCSS + '</pre>';
+		//document.body.innerHTML += '<pre>' + newCSS + '</pre>';
 		return newCSS;
 	});
 })();
