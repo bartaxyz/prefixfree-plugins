@@ -112,10 +112,24 @@
 		var newCSS = '',
 			rule,
 			prom,
-			result;
+			result,
+			isMedia,
+			temp;
 
 		for(var i = 0; i < nested.arr.length; ++i) {
 			rule = nested.arr[i];
+			console.log(rule.test(/@(-webkit-|-ms-|-o-|-moz-)?media/));
+			if(rule.test(/@(-webkit-|-ms-|-o-|-moz-)?media/)) {
+				rule.replace(/(@(-webkit-|-ms-|-o-|-moz-)?media.*\{)[\s\S]*(})/, function($1, $2, $3, $4) {
+					temp[0] = $2;
+					temp[1] = $4;
+					console.log(temp);
+				});
+				console.log(rule);
+				isMedia = true;
+			} else {
+				isMedia = false;
+			}
 			prom = parseCSS(rule);
 			newCSS += prom.outer;
 			result = prom.response;
@@ -131,7 +145,7 @@
 		newCSS = newCSS.replace(/\n\s+(.*;)/g, function($0, $1) { return '\n    ' + $1 });
 		newCSS = newCSS.replace(/\}\n*/g, '}\n\n');
 		newCSS = newCSS.replace(/\{;+/g, '{');
-		//document.body.innerHTML += '<pre>' + newCSS + '</pre>';
+		document.body.innerHTML += '<pre>' + newCSS + '</pre>';
 		return newCSS;
 	});
 })();
