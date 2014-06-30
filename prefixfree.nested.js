@@ -114,38 +114,42 @@
 			prom,
 			result,
 			isMedia,
-			temp;
+			temp = [],
+			tempCSS = '';
 
 		for(var i = 0; i < nested.arr.length; ++i) {
 			rule = nested.arr[i];
-			console.log(rule.test(/@(-webkit-|-ms-|-o-|-moz-)?media/));
-			if(rule.test(/@(-webkit-|-ms-|-o-|-moz-)?media/)) {
-				rule.replace(/(@(-webkit-|-ms-|-o-|-moz-)?media.*\{)[\s\S]*(})/, function($1, $2, $3, $4) {
+			if(/@(-webkit-|-ms-|-o-|-moz-)?media/.test(rule)) {
+				rule.replace(/(@(-webkit-|-ms-|-o-|-moz-)?media.*\{;)([\s\S]*)(})/, function($1, $2, $3, $4, $5) {
 					temp[0] = $2;
-					temp[1] = $4;
-					console.log(temp);
+					temp[1] = $5;
+					rule = $4;
 				});
-				console.log(rule);
 				isMedia = true;
 			} else {
 				isMedia = false;
 			}
 			prom = parseCSS(rule);
-			newCSS += prom.outer;
+			tempCSS += prom.outer;
 			result = prom.response;
 			while(result) {
 				prom = parseCSS(prom.inner);
-				newCSS += prom.outer;
+				tempCSS += prom.outer;
 				result = prom.response;
 			}
-			newCSS += prom.inner;
+			tempCSS += prom.inner;
+			if(isMedia) {
+				tempCSS = temp[0] + tempCSS + temp[1];
+			}
+			newCSS += tempCSS;
+			tempCSS = '';
 		}
 
 		newCSS = newCSS.replace(/\s*&\s*/g, '');
 		newCSS = newCSS.replace(/\n\s+(.*;)/g, function($0, $1) { return '\n    ' + $1 });
 		newCSS = newCSS.replace(/\}\n*/g, '}\n\n');
-		newCSS = newCSS.replace(/\{;+/g, '{');
-		document.body.innerHTML += '<pre>' + newCSS + '</pre>';
+		newCSS = newCSS.replace(/\{;+\n?/g, '{\n');
+		//document.body.innerHTML += '<pre>' + newCSS + '</pre>';
 		return newCSS;
 	});
 })();
