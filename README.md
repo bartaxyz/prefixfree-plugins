@@ -75,15 +75,15 @@ ul! > li.active {
 }
 ```
 
-It's easy to use but it's static. On page load it's hardly write and it's not dynamicaly changing. Sometimes it's useful to have nice and pure css.
+It's easy to use but it's static. On page load it's hardly written and it's not dynamicaly changing. Sometimes it's useful to have nice and pure css.
 
-If browser support `!` in selectors then it's normal dynamic.
+If browser support `!` in selectors then it's normally dynamic.
 
 ## 3. Loop in CSS
 
 ##### Plugin: [prefixfree.loop.js](prefixfree.loop.js)
 
-Sometimes you have to do something more than one. Why don't use loop. Your code will be smaller and when you want rewrite something you can do it just once and not many times. :)
+Sometimes you have to do something more than once. Why don't use loop? Your code will be smaller and when you want rewrite something you can do it just once and not many times. :)
 
 ```css
 // loop(variable name, start value, end value)
